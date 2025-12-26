@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+// Responsive mixins
+@mixin mobile-only {
+  @media (max-width: calc($breakpoint-sm - 1px)) {
+    @content;
+  }
+}
+
+@mixin tablet-and-up {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: $breakpoint-md) and (max-width: calc($breakpoint-lg - 1px)) {
+    @content;
+  }
+}
+
+@mixin desktop-and-up {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: $breakpoint-lg) and (max-width: calc($breakpoint-xl - 1px)) {
+    @content;
+  }
+}
+
+@mixin large-desktop-and-up {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// Touch device detection
+@mixin touch-device {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+@mixin hover-device {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

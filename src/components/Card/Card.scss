@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
+
+.card {
+  background-color: white;
+  border-radius: $radius-lg;
+  transition: all 0.2s ease-in-out;
+
+  // Variants
+  &--default {
+    background-color: white;
+    box-shadow: $shadow-sm;
+  }
+
+  &--outlined {
+    background-color: white;
+    border: 1px solid #e5e5ea;
+  }
+
+  &--elevated {
+    background-color: white;
+    box-shadow: $shadow-lg;
+  }
+
+  // Padding variants
+  &--padding-sm {
+    padding: $spacing-md;
+
+    @include mobile-only {
+      padding: $spacing-sm;
+    }
+  }
+
+  &--padding-md {
+    padding: $spacing-lg;
+
+    @include mobile-only {
+      padding: $spacing-md;
+    }
+  }
+
+  &--padding-lg {
+    padding: $spacing-xl;
+
+    @include mobile-only {
+      padding: $spacing-lg;
+    }
+  }
+
+  // Hoverable state
+  &--hoverable {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
