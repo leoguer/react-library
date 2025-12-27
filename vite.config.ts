@@ -9,5 +9,19 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    lib: {
+      entry: 'src/index.ts',
+      name: 'ReactLibrary',
+      formats: ['es', 'cjs'],
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
+    },
   },
 });
